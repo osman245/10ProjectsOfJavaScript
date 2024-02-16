@@ -42,5 +42,6 @@ addBtn.addEventListener("click", function () {
   console.log(inputBox.innerHTML);
   li.innerHTML = inputBox.value;
   console.log(ul);
+  setTimeout(10);
   ul.appendChild(li);
 });
