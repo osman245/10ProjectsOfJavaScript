@@ -7,7 +7,7 @@ const btn = document.getElementById("openModal");
 //get the button that adds input into the todo list and get the input, create the list that the input will be put  in
 const addBtn = document.getElementById("add-btn");
 const inputBox = document.getElementById("input-box");
-let ul = document.querySelector("todo");
+const ul = document.getElementById("todo");
 
 //container of the whole content
 const container = document.getElementById("container");
@@ -19,6 +19,7 @@ const span = document.getElementsByClassName("close")[0];
 btn.onclick = function () {
   container.style.display = "none";
   modal.style.display = "block";
+  ul.style.display = "none";
 };
 
 // When the user clicks on <span> (x), close the modal
@@ -38,10 +39,8 @@ window.onclick = function (event) {
 addBtn.addEventListener("click", function () {
   let li = document.createElement("li");
   li.classList.add("todo-style");
+  console.log(inputBox.value);
+  li.innerText = inputBox.value;
   console.log(li);
-  console.log(inputBox.innerHTML);
-  li.innerHTML = inputBox.value;
-  console.log(ul);
-  setTimeout(10);
-  ul.appendChild(li);
+  container.appendChild(li);
 });
